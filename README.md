@@ -1,6 +1,6 @@
 Meu CRUD em Python com MySQL
 
-Este é o meu CRUD (Create, Read, Update, Delete) desenvolvido em Python utilizando o banco de dados MySQL.
+Essa é uma aplicação CRUD (Create, Read, Update, Delete) desenvolvido em Python utilizando o banco de dados MySQL.
 O sistema permite autenticar usuários e, dependendo do tipo (admin ou comum), acessar menus diferentes para manipular os dados.
 
 No menu administrador, é possível:
