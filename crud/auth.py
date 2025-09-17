@@ -1,20 +1,11 @@
-from auth import autenticar
-from admin import menu_admin
-from usuario import menu_usuario
-while True:
-    usuario = autenticar()
-    if usuario:
-        if usuario['tipo'] == 'admin':
-            resultado = menu_admin()
-            if resultado == "voltar":
-                continue
-            elif resultado =="sair":
-                break
-        else:
-            resultado = menu_usuario()
-            if resultado =="voltar":
-                continue
-            elif resultado =="sair":
-                break
+from db import cursor
+
+def autenticar():
+    login = input("Usuário:")
+    senha_hash = input("Senha: ")
+    cursor.execute("SELECT * FROM tabela_adm WHERE login=%s AND senha_hash=%s", (login, senha_hash))
+    resultado = cursor.fetchone()
+    if resultado:
+        return {"id": resultado[0], "login": resultado[2], "tipo": resultado[4]}  # tipo = admin ou comum
     else:
-        print("Login falhou.")
+        return None
