@@ -23,7 +23,7 @@ def menu_admin():
             for linha in cursor.fetchall():
                 print(linha)
             print("TABELA DO ADMINISTRADOR")
-            cursor.execute("SELECT * FROM usuarios")
+            cursor.execute("SELECT * FROM tabela_adm")
             for linha in cursor.fetchall():
                 print(linha)
         elif opcao =="4":
