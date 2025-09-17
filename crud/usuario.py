@@ -8,10 +8,7 @@ def menu_usuario():
             try:
                 nome = input("Nome: ")
                 codigo = input("Código: ")
-                cursor.execute(
-                    "INSERT INTO usuario (nome, codigo) VALUES (%s, %s)",
-                    (nome, codigo)
-                )
+                cursor.execute("INSERT INTO usuario (nome, codigo) VALUES (%s, %s)",(nome, codigo))
                 conexao.commit()
                 print("Inserido com sucesso.")
             except Exception as e:
@@ -32,3 +29,5 @@ def menu_usuario():
 
         else:
             print("!! OPÇÃO INVÁLIDA !!")
+
+
